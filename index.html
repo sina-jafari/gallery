@@ -88,6 +88,57 @@
 .country-photo-grid img:hover {
   transform: scale(1.03);
 }
+.country-item {
+  position: relative; /* for dropdown positioning */
+  display: inline-block;
+  cursor: pointer;
+}
+
+.country-item > a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+/* Dropdown container hidden by default */
+.city-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* right below the country name */
+  left: 0;
+  background: white;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 150px;
+}
+
+/* Show dropdown when hovering on country or on dropdown itself */
+.country-item:hover .city-dropdown,
+.city-dropdown:hover {
+  display: block;
+}
+
+/* City spans style */
+.city-dropdown span {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: var(--accent-color);
+  margin: 2px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Change background on city hover */
+.city-dropdown span:hover {
+  background-color: var(--nav-hover-bg);
+  color: white;
+}
 
     :root {
       --bg-color: #fdfdfd;
