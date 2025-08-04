@@ -94,12 +94,25 @@
       color: var(--accent-color);
     }
 
+    /* Updated styles for consistent horizontal alignment */
     .country-list, .state-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
       margin-top: 30px;
+    }
+
+    /* Make links flex items with uniform size and alignment */
+    .country-list a, .state-list a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      min-width: 100px;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0;
     }
 
     .country-item, .state-item {
@@ -111,6 +124,7 @@
       font-weight: bold;
       color: var(--accent-color);
       transition: background-color 0.2s ease, color 0.2s ease;
+      margin: 0; /* ensure no extra margin */
     }
 
     .country-item:hover, .state-item:hover {
@@ -151,6 +165,13 @@
         font-size: 14px;
         padding: 8px 12px;
       }
+
+      /* Adjust height and min-width for smaller screens */
+      .country-list a, .state-list a {
+        height: auto;
+        min-width: auto;
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
@@ -185,11 +206,10 @@
     <h1>Gallery of My Travels</h1>
 
     <div class="country-list">
-            <a href="#iran" class="country-item">Iran</a>
-            <a href="#armenia" class="country-item">Armenia</a>
+      <a href="#iran" class="country-item">Iran</a>
+      <a href="#armenia" class="country-item">Armenia</a>
       <a href="#mexico" class="country-item">Mexico</a>
       <a href="#turkey" class="country-item">Turkey</a>
-
       <a href="#france" class="country-item">France</a>
       <a href="#italy" class="country-item">Italy</a>
       <a href="#usa" class="country-item">United States</a>
@@ -203,30 +223,31 @@
   </div>
 
   <!-- Country Sections -->
-
- <div class="section" id="iran">
+  <div class="section" id="iran">
     <h2 class="subheading">🇮🇷 Iran</h2>
     <div class="photo-grid">
       <img src="images/iran1.jpg" alt="Iran 1">
       <img src="images/iran2.jpg" alt="Iran 2">
     </div>
-  
-   <div class="section" id="armenia">
+  </div>
+
+  <div class="section" id="armenia">
     <h2 class="subheading">🇦🇲 Armenia</h2>
     <div class="photo-grid">
       <img src="images/armenia1.jpg" alt="Armenia 1">
       <img src="images/armenia2.jpg" alt="Armenia 2">
     </div>
+  </div>
 
-      <div class="section" id="Mexico">
+  <div class="section" id="mexico">
     <h2 class="subheading">🇲🇽 Mexico</h2>
     <div class="photo-grid">
-      <img src="images/Mexico1.jpg" alt="Mexico 1">
-      <img src="images/Mexico2.jpg" alt="Mexico 2">
+      <img src="images/mexico1.jpg" alt="Mexico 1">
+      <img src="images/mexico2.jpg" alt="Mexico 2">
     </div>
   </div>
 
- <div class="section" id="Turkey">
+  <div class="section" id="turkey">
     <h2 class="subheading">🇹🇷 Turkey</h2>
     <div class="photo-grid">
       <img src="images/turkey1.jpg" alt="Turkey 1">
@@ -234,8 +255,6 @@
     </div>
   </div>
 
-     
-  </div>
   <div class="section" id="france">
     <h2 class="subheading">🇫🇷 France</h2>
     <div class="photo-grid">
@@ -243,10 +262,6 @@
       <img src="images/france2.jpg" alt="France 2">
     </div>
   </div>
-
- 
-
- 
 
   <div class="section" id="italy">
     <h2 class="subheading">🇮🇹 Italy</h2>
