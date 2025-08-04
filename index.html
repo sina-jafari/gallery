@@ -22,64 +22,63 @@
     }
 
     nav {
-      width: 100vw;
+      width: 100%;
       background-color: var(--nav-bg);
+      padding: 10px 0;
       display: flex;
       justify-content: center;
-      padding: 12px 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 999;
     }
 
-    .nav-container {
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
-      gap: 25px;
-      align-items: center;
     }
 
-    nav a, .dropdown-button {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    nav a:hover, .dropdown-button:hover {
-      color: #ffdd57;
-    }
-
-    .dropdown {
+    nav li {
+      margin: 0 20px;
       position: relative;
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 38px;
-      left: 0;
-      background-color: var(--nav-bg);
-      padding: 10px 0;
-      min-width: 160px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 8px 16px;
+    nav a {
       color: white;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    .dropdown-content a:hover {
-      background-color: var(--nav-hover-bg);
+    nav a:hover {
+      color: #ffdd57;
     }
 
-    .dropdown:hover .dropdown-content {
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--nav-bg);
+      border-radius: 6px;
+      padding: 10px 0;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-menu li {
+      padding: 8px 20px;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a {
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-menu {
       display: block;
     }
 
@@ -140,9 +139,12 @@
     }
 
     @media (max-width: 600px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 10px;
+      nav li {
+        margin: 0 10px;
+      }
+
+      nav a {
+        font-size: 16px;
       }
 
       .country-item, .state-item {
@@ -154,22 +156,28 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION (standardized version) -->
   <nav>
-    <div class="nav-container">
-      <a href="index.html">Home</a>
-      <a href="cv.html">CV</a>
-      <div class="dropdown">
-        <span class="dropdown-button">Projects ▾</span>
-        <div class="dropdown-content">
-          <a href="projects.html">All Projects</a>
-          <a href="quant.html">Quantitative Analysis</a>
-          <a href="code.html">Code Tools</a>
-        </div>
-      </div>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li class="dropdown">
+        <a href="#">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="/bio">Biography</a></li>
+          <li><a href="/skills">Skills</a></li>
+          <li><a href="/cv">CV</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a href="/photonics">Photonics</a></li>
+          <li><a href="/qa">Quantitative Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- MAIN CONTENT -->
