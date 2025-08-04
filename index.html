@@ -6,6 +6,44 @@
   <title>Gallery – Sina Jafari</title>
   <style>
 
+    .photo-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  text-align: center;
+}
+
+.photo-item:hover .overlay {
+  opacity: 1;
+}
+
+
     .country-nav {
   display: flex;
   flex-wrap: wrap;
@@ -469,11 +507,18 @@
   <!-- Country Sections -->
   <div class="section" id="iran">
   <h2 class="subheading">🇮🇷 Iran</h2>
-  <div class="photo-grid">
-    <img src="images/iran1.jpg" alt="Iran 1">
-    <img src="images/iran2.jpg" alt="Iran 2">
+ <div class="photo-grid">
+  <div class="photo-item">
+    <img src="images/iran1.jpg" alt="Iran 1" />
+    <div class="overlay">Yazd</div>
   </div>
+  <div class="photo-item">
+    <img src="images/iran2.jpg" alt="Iran 2" />
+    <div class="overlay">Yazd</div>
+  </div>
+  <!-- repeat for other photos -->
 </div>
+
 
 
 
